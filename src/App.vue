@@ -1,15 +1,15 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="mi primer proyecto vue FRANCISCO CHANATAXI"/>
+  <contador/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import contador from './components/Contador.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    contador
   }
 }
 </script>
