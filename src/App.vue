@@ -1,8 +1,9 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <contador titulo= "Estudiante" />
-  <contador titulo= "Profesor"/>
-    <contador/>
+    <contador titulo="Estudiante" :num="1"/>
+    <contador titulo="Profesor" />
+    <contador :num= "calcularValor()"/>
+
 
 </template>
 
@@ -14,6 +15,12 @@ export default {
   components: {
     contador,
   },
+
+  methods:{
+    calcularValor(){
+      return 10 + 2;
+    }
+  }
 
 };
 </script>
