@@ -1,14 +1,16 @@
 <template>
-<pregunta/>
+<pokemonPage/>
 </template>
 
 <script>
-import pregunta from "./components/Pregunta.vue";
+
+import PokemonPage from './pages/PokemonPage.vue';
 
 export default {
   name: "App",
   components: {
-    pregunta,
+    PokemonPage
+    
   },
   methods:{
     calcularValor(){

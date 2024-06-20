@@ -5,9 +5,9 @@
     <input v-model="pregunta" type="text" placeholder="Hazme una pregunta" />
     <p>Recuerda terminar la pregunta con un signo de pregunta (?)</p>
 
-    <div class="respuesta">
+    <div v-show="mensaje" class="respuesta">
       <h2>{{ pregunta }} ?</h2>
-      <h1>{{ respuesta }}</h1>
+      <h1>{{ respuesta === 'yes'?'SI':'NO!' }}</h1>
     </div>
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
       pregunta: null,
       respuesta: null,
       img: null,
+      mensaje : false
     };
   },
 
@@ -29,10 +30,12 @@ en la propiedad reactiva */
   todo observador se tiene que crear con el mismo nombre de la propiedad reactiva
   */
     pregunta(value, oldvalue) {
+            this.mensaje = false;
       console.log({ value, oldvalue });
 
       if (!value.includes("?")) return;
       this.obtenerRespuesta();
+      this.mensaje = true;
     },
   },
 
@@ -53,10 +56,12 @@ en la propiedad reactiva */
       const data2 = await this.obtenerRespuesta();
     },
   },
+
+  
 };
 </script>
 
-<style>
+<style scoped>
 img,
 .obscuro {
   max-height: 100%;
@@ -107,4 +112,5 @@ p {
 .respuesta {
   margin-top: 100px;
 }
+
 </style>
