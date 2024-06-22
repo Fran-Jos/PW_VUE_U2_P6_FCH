@@ -30,7 +30,8 @@ export default {
     },
     mostrarPokemon:{
       type:Boolean,
-      required:true
+      required:true,
+      default:true
 
     }
   },
